@@ -2,8 +2,7 @@
 
 DIRS=(
     "$HOME"
-    "$HOME/documents/obsidian-me/"
-    "$HOME/zettelkasten/"
+    "$HOME/obsidian-me/"
     "$HOME/code/"
 )
 

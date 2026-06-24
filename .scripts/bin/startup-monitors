@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+iwctl device wlan0 set-property Powered on
+bluetoothctl power on
+
+sleep 1
+if hyprctl monitors | grep -q "(ID 1)"; then
+    hyprctl keyword monitor "eDP-1, disable"
+    ln -sfn "$HOME/.config/waywall_1080" "$HOME/.config/waywall"
+    hyprctl setcursor "cross" 28
+else
+    ln -sfn "$HOME/.config/waywall_768" "$HOME/.config/waywall"
+    hyprctl setcursor "cross" 24
+fi
+
+SOCKET="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
+
+while true; do
+    nc -U "$SOCKET" | while read -r event; do
+        case "$event" in 
+            monitoradded* )
+                if hyprctl monitors | grep -q "(ID 1)"; then
+                    hyprctl keyword monitor "eDP-1, disable"
+                    ln -sfn "$HOME/.config/waywall_1080" "$HOME/.config/waywall"
+                    hyprctl setcursor "cross" 28
+                fi
+            ;;
+            monitorremoved* )
+                if ! hyprctl monitors | grep -q "(ID 1)"; then
+                    hyprctl keyword monitor "eDP-1,preferred,auto,1"
+                    ln -sfn "$HOME/.config/waywall_768" "$HOME/.config/waywall"
+                    hyprctl setcursor "cross" 24
+                fi
+            ;;
+        esac
+    done
+    sleep 1
+done

@@ -1,0 +1,22 @@
+#!/bin/bash
+current=$(readlink ~/.local/share/icons/cross/cursors/left_ptr)
+
+if [[ "$current" == *"Windows-10"* ]]; then
+  target=/usr/share/icons/Adwaita/cursors/left_ptr
+else
+  target=/usr/share/icons/Windows-10/cursors/cross
+fi
+
+cd ~/.local/share/icons/cross/cursors
+rm left_ptr arrow default top_left_arrow
+for name in left_ptr arrow default top_left_arrow; do
+  ln -s "$target" "$name"
+done
+
+hyprctl setcursor Adwaita 28
+sleep 0.1
+if hyprctl monitors | grep -q "(ID 1)"; then
+    hyprctl setcursor "cross" 28
+else
+    hyprctl setcursor "cross" 24
+fi
