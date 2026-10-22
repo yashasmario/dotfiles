@@ -10,8 +10,13 @@ startup_mode = "Maximized"
 title = "BATMAN"
 
 [font]
-normal = {family = "JetBrainsMono Nerd Font", style = "Regular"}
-size = 16
+# normal = {family = "BitstromWera Nerd Font", style = "Regular"}
+normal = {family = "AdwaitaMono Nerd Font", style = "Regular"}
+# normal = {family = "JetBrainsMono Nerd Font", style = "Regular"}
+size = 20
 
 [cursor]
-style = { shape = "Block", blinking = "On"}
+style = { shape = "Beam", blinking = "On"}
+
+[mouse]
+hide_when_typing = true
