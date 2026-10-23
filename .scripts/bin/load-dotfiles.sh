@@ -20,7 +20,7 @@ for item in "$SRC"/* "$SRC"/.[!.]* "$SRC"/..?*; do
         DEST="$CONFIG"
     fi
 
-    echo "Loading $name into $DEST..."
+    echo "Loading '$name' into '$DEST'..."
 
     if [[ -d "$item" ]]; then
         mkdir -p "$DEST/$name"
@@ -34,4 +34,4 @@ for item in "$SRC"/* "$SRC"/.[!.]* "$SRC"/..?*; do
     fi
 done
 
-echo "Done. Dotfiles restored."
+echo "Done. dotfiles loaded!"

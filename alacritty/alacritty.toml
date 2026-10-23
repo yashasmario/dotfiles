@@ -13,7 +13,7 @@ title = "BATMAN"
 # normal = {family = "BitstromWera Nerd Font", style = "Regular"}
 normal = {family = "AdwaitaMono Nerd Font", style = "Regular"}
 # normal = {family = "JetBrainsMono Nerd Font", style = "Regular"}
-size = 20
+size = 14
 
 [cursor]
 style = { shape = "Beam", blinking = "On"}
