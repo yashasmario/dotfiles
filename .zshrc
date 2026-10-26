@@ -10,10 +10,6 @@ export PATH="$GOPATH/bin:$PATH"
 
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 
-if [[ -n "$TMUX" ]]; then
-    printf '\e[5 q'
-fi
-
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
