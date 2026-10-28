@@ -15,7 +15,6 @@ DIRS=(
     "$HOME/.zshrc"
     "$HOME/.config/waywall_768"
     "$HOME/.config/xkb"
-    "$HOME/.config/waybar"
     "$HOME/.config/hypr"
 )
 
