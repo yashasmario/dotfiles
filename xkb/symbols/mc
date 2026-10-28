@@ -1,0 +1,21 @@
+partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "us(basic)"
+
+    key <AE01> { [ 1, U002B ] };
+    key <AE02> { [ 2, 8 ] };
+    key <AE04> { [ 4, 4 ] };
+    key <AE05> { [ 5, 5 ] };
+
+    key <AD01> { [ q, s ] };
+    key <AD03> { [ e, o ] };
+    key <AC02> { [ s, e ] };
+    key <AC03> { [ d, b ] };
+    key <AC04> { [ f, n ] };
+    key <AC05> { [ g, d ] };
+    key <AB01> { [ z, p ] };
+    key <AB02> { [ x, i ] };
+    key <AB04> { [ v, k ] };
+    key <AB05> { [ b, g ] };
+    key <AB06> { [ n, f ] };
+};

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#copies all specified files from .config to .dotfiles
+
 set -euo pipefail
 
 DEST="$HOME/.dotfiles"
@@ -11,6 +13,10 @@ DIRS=(
     "$HOME/.config/alacritty"
     "$HOME/.scripts"
     "$HOME/.zshrc"
+    "$HOME/.config/waywall_768"
+    "$HOME/.config/xkb"
+    "$HOME/.config/waybar"
+    "$HOME/.config/hypr"
 )
 
 mkdir -p "$DEST"

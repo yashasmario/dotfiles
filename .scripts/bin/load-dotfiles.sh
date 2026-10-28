@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#copies all files from .dotfiles to .config
+
 set -euo pipefail
 
 SRC="$HOME/.dotfiles"
